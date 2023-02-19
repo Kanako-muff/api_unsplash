@@ -1,0 +1,98 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 70%;
+}
+.search input {
+  padding: 10px 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border: 1px solid #333;
+  font-size: 16px;
+  width: 50%;
+  height: 38.5px;
+}
+.search button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: white;
+  background-color: #333;
+  cursor: pointer;
+}
+.search button:hover {
+  background-color: #666;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.image-container .image {
+  width: 25%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin: 20px;
+  transition: transform 0.4s;
+}
+.image-container .image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.modal-content .modal-bg {
+  z-index: 1;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 75%;
+  height: 75%;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+}
+.modal-content img {
+  z-index: 2;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 75%;
+}
+.modal-content button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: white;
+  background-color: #333;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 2;
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  right: 40%;
+  margin: auto;
+}
+.modal-content button:hover {
+  background-color: #666;
+}/*# sourceMappingURL=style.css.map */

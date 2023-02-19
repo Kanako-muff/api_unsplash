@@ -1,0 +1,110 @@
+$primary-color: #333;
+$secondary-color: #666;
+$input-padding: 10px 20px;
+$input-border-radius: 6px;
+$image-width: 25%;
+$image-height: 200px;
+$image-margin: 20px;
+$transition-duration: 0.4s;
+
+@mixin button-style{
+    font-size: 16px;
+    font-weight: bold;
+    padding: $input-padding;
+    border: none;
+    border-top-right-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+
+    color: white;
+    background-color: $primary-color;
+    cursor: pointer;
+    &:hover{
+        background-color: $secondary-color;
+    }
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; 
+    width: 70%;
+    input {
+        padding: $input-padding;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: $input-border-radius;
+        border-bottom-left-radius: $input-border-radius;
+        border: 1px solid $primary-color;
+        font-size: 16px;
+        width: 50%;
+        height: 38.5px;
+    }
+    button {
+        @include button-style;
+    }
+}
+
+.image-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image{
+        width: $image-width;
+        height: $image-height;
+        background-size: cover;
+        background-position: center;
+        margin: $image-margin;
+
+        transition: transform $transition-duration;
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+}
+
+.modal-content{
+    .modal-bg{
+        // background-color: rgba(238, 238, 238,0.9);
+        z-index: 1;
+        position: fixed;
+        top: 15%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 75%;
+        height: 75%;
+
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.23);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.9px);
+        -webkit-backdrop-filter: blur(8.9px);
+        border: 1px solid rgba(255, 255, 255, 0.21);
+    }
+
+    img{
+        z-index: 2;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 75%;
+    }
+
+    button{
+        @include button-style;
+        border-radius: $input-border-radius;
+        z-index: 2;
+        position: absolute;
+        bottom: 5%;
+        left: 40%;
+        right: 40%;
+        margin: auto;
+    }
+}
